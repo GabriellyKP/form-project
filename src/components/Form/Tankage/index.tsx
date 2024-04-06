@@ -7,7 +7,7 @@ import { useFieldArray, useFormContext, useWatch } from "react-hook-form";
 import Fields from "./Fields";
 import { pxToRem } from "../../../styles/muiTheme";
 
-export default function TankTechnicalInformation() {
+export default function Tankage() {
   const [isShow, setIsShow] = useState<boolean>(true);
 
   const { control } = useFormContext();
@@ -30,7 +30,7 @@ export default function TankTechnicalInformation() {
     append(fieldsName);
   };
 
-  const tanksQuantity = useWatch({ control, name: "tanks_quantity" });
+  const tanksQuantity = useWatch({ control, name: "tank_quantity" });
 
   const handleAddTanksQuantity = async () => {
     remove();
@@ -40,11 +40,7 @@ export default function TankTechnicalInformation() {
   };
 
   return (
-    <CardContainer
-      title="Informações técnicas dos tanques"
-      isShow={isShow}
-      setIsShow={setIsShow}
-    >
+    <CardContainer title="Tancagem" isShow={isShow} setIsShow={setIsShow}>
       {isShow && (
         <>
           <Grid item lg={12} sm={12} xs={12} display="flex" gap={pxToRem(16)}>

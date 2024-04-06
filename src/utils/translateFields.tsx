@@ -1,0 +1,17 @@
+export const translateEstablishmentDataFields = {
+  establishment_company_name: "Razão social",
+  establishment_trading_name: "Nome fantasia",
+  establishment_cnpj: "CNPJ",
+  establishment_cep: "CEP",
+  establishment_state: "Estado",
+  establishment_city: "Cidade",
+  establishment_address: "Endereço",
+  establishment_zoning: "Zoneamento",
+  establishment_branch_of_activity: "Ramo de atividade",
+  establishment_flag: "Bandeira",
+  establishment_phone: "Telefone",
+  establishment_email: "E-mail",
+  establishment_responsible_name: "Responsável",
+  establishment_employees_quantity: "Número de funcionários",
+  establishment_coordinates: "Coordenadas (UTC)",
+};

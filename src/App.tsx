@@ -2,9 +2,21 @@ import { Box, Button, Card, Typography } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
 import { pxToRem } from "./styles/muiTheme";
 import Form from "./components/Form";
+import FormularioPDF from "./components/pdf";
+import { useState } from "react";
+import { IFormDataFields } from "./types/formDataType";
 
 function App() {
   const useFormProvider = useForm();
+  const { handleSubmit, reset } = useFormProvider;
+  const [generatePdf, setGeneratePdf] = useState<boolean>(false);
+  const [formData, setFormData] = useState<IFormDataFields>();
+
+  //@ts-expect-error permitir tipagem any para esse campo
+  const useGeneratePdf = (data) => {
+    setGeneratePdf(true);
+    setFormData(data);
+  };
 
   return (
     <FormProvider {...useFormProvider}>
@@ -26,7 +38,7 @@ function App() {
           }}
         >
           <Typography variant="h4" color="primary">
-            Formulário
+            Formulário de vistoria técnica - ProPosto
           </Typography>
         </Box>
 
@@ -40,11 +52,18 @@ function App() {
             gap: pxToRem(16),
           }}
         >
-          <Button variant="outlined">Limpar formulário</Button>
-          <Button variant="contained" sx={{ px: pxToRem(50) }}>
+          <Button variant="outlined" onClick={() => reset()}>
+            Limpar formulário
+          </Button>
+          <Button
+            variant="contained"
+            sx={{ px: pxToRem(50) }}
+            onClick={handleSubmit(useGeneratePdf)}
+          >
             Enviar
           </Button>
         </Card>
+        {generatePdf && formData && <FormularioPDF formData={formData} />}
       </Box>
     </FormProvider>
   );

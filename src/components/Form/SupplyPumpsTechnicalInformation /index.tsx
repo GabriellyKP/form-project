@@ -51,6 +51,7 @@ export default function SupplyPumpsTechnicalInformation() {
             <NumericInput
               inputId="supply_pumps_quantity"
               label="Quantidade de bombas (1-60)"
+              placeholder="Digite a quantidade de bombas"
               isAllowed={(values) => {
                 const { formattedValue, floatValue } = values;
                 if (floatValue == null) {

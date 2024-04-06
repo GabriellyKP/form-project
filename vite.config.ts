@@ -14,8 +14,8 @@ export default defineConfig({
         "favicon.ico",
       ],
       manifest: {
-        name: "Meu Aplicativo",
-        short_name: "Aplicativo",
+        name: "ProPosto",
+        short_name: "ProPosto",
         description: "Descrição do meu aplicativo.",
         theme_color: "#ffffff",
         icons: [

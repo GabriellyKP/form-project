@@ -5,31 +5,14 @@ import CardContainer from "../../common/CardContainer";
 import Input from "../../common/Input";
 import Autocomplete from "../../common/Autocomplete";
 import NumericInput from "../../common/NumericInput";
-import { useFormContext, useWatch } from "react-hook-form";
 
-export default function EstablishmentData() {
+export default function Washing() {
   const [isShow, setIsShow] = useState<boolean>(true);
-  const { control } = useFormContext();
+
   const zoningOptions = ["Urbano", "Industrial", "Diversificado", "Rural"];
 
-  const phoneNumber = useWatch({
-    control,
-    name: "establishment_phone",
-  });
-
-  const phoneMask = (number: string) => {
-    if (number?.replace(/\D/g, "").length <= 8) {
-      return "9999-99999";
-    } else {
-      return "99999-9999";
-    }
-  };
   return (
-    <CardContainer
-      title="Dados do estabelecimento"
-      isShow={isShow}
-      setIsShow={setIsShow}
-    >
+    <CardContainer title="Lavação" isShow={isShow} setIsShow={setIsShow}>
       {isShow && (
         <>
           <Grid item lg={6} sm={12} xs={12} display="flex">
@@ -50,7 +33,6 @@ export default function EstablishmentData() {
             <Input
               inputId="establishment_cnpj"
               label="CNPJ"
-              mask="99.999.999/9999-99"
               placeholder="Digite o CNPJ"
             />
           </Grid>
@@ -58,7 +40,6 @@ export default function EstablishmentData() {
             <Input
               inputId="establishment_cep"
               label="CEP"
-              mask="99999-999"
               placeholder="Digite o CEP"
             />
           </Grid>
@@ -87,7 +68,6 @@ export default function EstablishmentData() {
             <Autocomplete
               inputId="establishment_zoning"
               label="Zoneamento"
-              placeholder="Selecione o zoneamento"
               options={zoningOptions}
             />
           </Grid>
@@ -109,7 +89,6 @@ export default function EstablishmentData() {
             <Input
               inputId="establishment_phone"
               label="Telefone"
-              mask={phoneNumber?.number && phoneMask(phoneNumber?.number)}
               placeholder="Digite o telefone"
             />
           </Grid>

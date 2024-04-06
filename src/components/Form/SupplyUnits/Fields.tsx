@@ -12,14 +12,18 @@ interface FieldsProps {
 export default function Fields({ index }: FieldsProps) {
   const [isShow, setIsShow] = useState<boolean>(true);
 
-  const supplyPumpTypeOptions = [
-    "Simples",
-    "Dupla",
-    "Tripla",
-    "Quadrupla",
-    "Quintupla",
-    "Sextupla",
-    "Octupla",
+  const tankTypeOptions = ["Pleno", "Bipartido", "Tripartido", "Outro"];
+  const storageProductOptions = [
+    "Diesel s10",
+    "Diesel s500",
+    "Gasolina comum",
+    "Gasolina aditivada",
+    "Etanol",
+  ];
+  const wallTypeOptions = [
+    "Parede simples",
+    "Parede dupla",
+    "Jaquetado",
     "Outro",
   ];
 
@@ -35,7 +39,7 @@ export default function Fields({ index }: FieldsProps) {
         position="relative"
       >
         <Box display="flex" alignItems="center">
-          <Typography variant="body1">{`Bomba ${index + 1}`}</Typography>
+          <Typography variant="body1">{`Tanque ${index + 1}`}</Typography>
         </Box>
         {typeof setIsShow === "function" && (
           <Button
@@ -60,7 +64,7 @@ export default function Fields({ index }: FieldsProps) {
 
       {isShow && (
         <>
-          <Grid item lg={6} sm={6} xs={12} display="flex">
+          <Grid item lg={12} sm={12} xs={12} display="flex">
             <Input
               inputId={`${index}.manufacturer_name`}
               label="Nome do fabricante"
@@ -71,7 +75,6 @@ export default function Fields({ index }: FieldsProps) {
             <NumericInput
               inputId={`${index}.year_of_manufacture`}
               label="Ano de fabricação"
-              maxLength={4}
               placeholder="Digite o ano de fabricação"
             />
           </Grid>
@@ -85,8 +88,29 @@ export default function Fields({ index }: FieldsProps) {
           <Grid item lg={6} sm={6} xs={12} display="flex">
             <Autocomplete
               inputId={`${index}.type`}
-              label="Tipo da bomba"
-              options={supplyPumpTypeOptions}
+              label="Tipo de tanque"
+              options={tankTypeOptions}
+            />
+          </Grid>
+          <Grid item lg={6} sm={6} xs={12} display="flex">
+            <NumericInput
+              inputId={`${index}.volume`}
+              label="Volume (m³)"
+              placeholder="Digite o volume"
+            />
+          </Grid>
+          <Grid item lg={6} sm={6} xs={12} display="flex">
+            <Autocomplete
+              inputId={`${index}.stored_product`}
+              label="Produto armazenado"
+              options={storageProductOptions}
+            />
+          </Grid>
+          <Grid item lg={6} sm={6} xs={12} display="flex">
+            <Autocomplete
+              inputId={`${index}.wall_type`}
+              label="Tipo de parede"
+              options={wallTypeOptions}
             />
           </Grid>
         </>

@@ -75,20 +75,21 @@ export default function Fields({ index }: FieldsProps) {
             <NumericInput
               inputId={`${index}.year_of_manufacture`}
               label="Ano de fabricação"
-              placeholder="Ex.: 2024"
+              placeholder="Digite o ano de fabricação"
             />
           </Grid>
           <Grid item lg={6} sm={6} xs={12} display="flex">
             <NumericInput
               inputId={`${index}.serial_number`}
               label="Número de série"
-              placeholder="Ex.: 0000000"
+              placeholder="Digite o número de série"
             />
           </Grid>
           <Grid item lg={6} sm={6} xs={12} display="flex">
             <Autocomplete
               inputId={`${index}.type`}
               label="Tipo de tanque"
+              placeholder="Selecione o tipo de tanque"
               options={tankTypeOptions}
             />
           </Grid>
@@ -96,13 +97,14 @@ export default function Fields({ index }: FieldsProps) {
             <NumericInput
               inputId={`${index}.volume`}
               label="Volume (m³)"
-              placeholder="Ex.: 0000000"
+              placeholder="Digite o volume"
             />
           </Grid>
           <Grid item lg={6} sm={6} xs={12} display="flex">
             <Autocomplete
               inputId={`${index}.stored_product`}
               label="Produto armazenado"
+              placeholder="Selecione o produto armazenado"
               options={storageProductOptions}
             />
           </Grid>
@@ -110,6 +112,7 @@ export default function Fields({ index }: FieldsProps) {
             <Autocomplete
               inputId={`${index}.wall_type`}
               label="Tipo de parede"
+              placeholder="Selecione o tipo de parede"
               options={wallTypeOptions}
             />
           </Grid>
