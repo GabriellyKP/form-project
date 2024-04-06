@@ -168,13 +168,14 @@ const FormularioPDF = ({ formData }: FormularioPDFProps) => {
             return null;
           })}
 
-          <Image
-            style={styles.image}
-            src={
-              typeof imageUrls.file === "string" ? imageUrls.file : undefined
-            }
-          />
-
+          {imageUrls.file && (
+            <Image
+              style={styles.image}
+              src={
+                typeof imageUrls.file === "string" ? imageUrls.file : undefined
+              }
+            />
+          )}
           <Text
             style={{ fontSize: 10, marginBottom: 5 }}
             render={({ pageNumber, totalPages }) =>
