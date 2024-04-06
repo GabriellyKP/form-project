@@ -1,4 +1,4 @@
-import { Box, Button, Card, Typography } from "@mui/material";
+import { Box, Button, Card, Typography, useMediaQuery } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
 import { pxToRem } from "./styles/muiTheme";
 import Form from "./components/Form";
@@ -7,6 +7,8 @@ import { useState } from "react";
 import { IFormDataFields } from "./types/formDataType";
 
 function App() {
+  const isSmall = useMediaQuery("(max-width:599px)");
+
   const useFormProvider = useForm();
   const { handleSubmit, reset } = useFormProvider;
   const [generatePdf, setGeneratePdf] = useState<boolean>(false);
@@ -24,7 +26,7 @@ function App() {
         display="flex"
         flexDirection="column"
         gap={pxToRem(24)}
-        p={pxToRem(32)}
+        p={isSmall ? pxToRem(10) : pxToRem(32)}
       >
         <Box
           display="flex"
