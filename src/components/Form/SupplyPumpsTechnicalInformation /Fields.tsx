@@ -62,14 +62,14 @@ export default function Fields({ index }: FieldsProps) {
         <>
           <Grid item lg={6} sm={6} xs={12} display="flex">
             <Input
-              inputId={`${index}.manufacturer_name`}
+              inputId={`supply_pumps.${index}.manufacturer_name`}
               label="Nome do fabricante"
               placeholder="Digite o nome do fabricante"
             />
           </Grid>
           <Grid item lg={6} sm={6} xs={12} display="flex">
             <NumericInput
-              inputId={`${index}.year_of_manufacture`}
+              inputId={`supply_pumps.${index}.year_of_manufacture`}
               label="Ano de fabricação"
               maxLength={4}
               placeholder="Digite o ano de fabricação"
@@ -77,14 +77,14 @@ export default function Fields({ index }: FieldsProps) {
           </Grid>
           <Grid item lg={6} sm={6} xs={12} display="flex">
             <NumericInput
-              inputId={`${index}.serial_number`}
+              inputId={`supply_pumps.${index}.serial_number`}
               label="Número de série"
               placeholder="Digite o número de série"
             />
           </Grid>
           <Grid item lg={6} sm={6} xs={12} display="flex">
             <Autocomplete
-              inputId={`${index}.type`}
+              inputId={`supply_pumps.${index}.type`}
               label="Tipo da bomba"
               options={supplyPumpTypeOptions}
             />

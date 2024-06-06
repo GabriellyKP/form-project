@@ -49,7 +49,9 @@ export default function Fields({ index }: FieldsProps) {
 
       {isShow && (
         <Grid item lg={12} sm={12} xs={12} display="flex">
-          <FileUploadInput inputId={`${index}.inspection_supply_lane_file`} />
+          <FileUploadInput
+            inputId={`inspection_supply_pumps.${index}.inspection_supply_lane_file`}
+          />
         </Grid>
       )}
     </Fragment>

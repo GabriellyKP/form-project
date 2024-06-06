@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Grid, Typography } from "@mui/material";
+import { Grid, InputAdornment, Typography } from "@mui/material";
 
 import CardContainer from "../../common/CardContainer";
 import Autocomplete from "../../common/Autocomplete";
 import FileUploadInput from "../../common/FileUploadInput";
+import Input from "../../common/Input";
+import StickyNote2OutlinedIcon from "@mui/icons-material/StickyNote2Outlined";
 
 export default function WasteStorageAndManagement() {
   const [isShow, setIsShow] = useState<boolean>(true);
@@ -28,10 +30,25 @@ export default function WasteStorageAndManagement() {
             <Typography variant="body1">Localização da área</Typography>
           </Grid>
 
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Input
+              inputId="wasteStorageAndManagement_status"
+              label="Observação"
+              placeholder="Digite uma observação"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <StickyNote2OutlinedIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="wasteStorageAndManagement_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -44,10 +61,25 @@ export default function WasteStorageAndManagement() {
             <Typography variant="body1">Pavimentação</Typography>
           </Grid>
 
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Input
+              inputId="wasteStorageAndManagement_status"
+              label="Observação"
+              placeholder="Digite uma observação"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <StickyNote2OutlinedIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="wasteStorageAndManagement_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -60,10 +92,25 @@ export default function WasteStorageAndManagement() {
             <Typography variant="body1">Cobertura</Typography>
           </Grid>
 
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Input
+              inputId="wasteStorageAndManagement_status"
+              label="Observação"
+              placeholder="Digite uma observação"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <StickyNote2OutlinedIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="wasteStorageAndManagement_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -78,10 +125,25 @@ export default function WasteStorageAndManagement() {
             </Typography>
           </Grid>
 
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Input
+              inputId="wasteStorageAndManagement_status"
+              label="Observação"
+              placeholder="Digite uma observação"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <StickyNote2OutlinedIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="wasteStorageAndManagement_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -96,10 +158,25 @@ export default function WasteStorageAndManagement() {
             </Typography>
           </Grid>
 
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Input
+              inputId="wasteStorageAndManagement_status"
+              label="Observação"
+              placeholder="Digite uma observação"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <StickyNote2OutlinedIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="wasteStorageAndManagement_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -114,10 +191,25 @@ export default function WasteStorageAndManagement() {
             </Typography>
           </Grid>
 
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Input
+              inputId="wasteStorageAndManagement_status"
+              label="Observação"
+              placeholder="Digite uma observação"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <StickyNote2OutlinedIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="wasteStorageAndManagement_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -132,10 +224,25 @@ export default function WasteStorageAndManagement() {
             </Typography>
           </Grid>
 
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Input
+              inputId="wasteStorageAndManagement_status"
+              label="Observação"
+              placeholder="Digite uma observação"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <StickyNote2OutlinedIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="wasteStorageAndManagement_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -148,10 +255,25 @@ export default function WasteStorageAndManagement() {
             <Typography variant="body1">Armazenamento de filtros</Typography>
           </Grid>
 
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Input
+              inputId="wasteStorageAndManagement_status"
+              label="Observação"
+              placeholder="Digite uma observação"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <StickyNote2OutlinedIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="wasteStorageAndManagement_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -164,10 +286,25 @@ export default function WasteStorageAndManagement() {
             <Typography variant="body1">Armazenamento de estopas</Typography>
           </Grid>
 
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Input
+              inputId="wasteStorageAndManagement_status"
+              label="Observação"
+              placeholder="Digite uma observação"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <StickyNote2OutlinedIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="wasteStorageAndManagement_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -179,10 +316,25 @@ export default function WasteStorageAndManagement() {
             <Typography variant="body1">Armazenamento de embalagens</Typography>
           </Grid>
 
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Input
+              inputId="wasteStorageAndManagement_status"
+              label="Observação"
+              placeholder="Digite uma observação"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <StickyNote2OutlinedIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="wasteStorageAndManagement_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -195,10 +347,25 @@ export default function WasteStorageAndManagement() {
             <Typography variant="body1">Resíduos classe II</Typography>
           </Grid>
 
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Input
+              inputId="wasteStorageAndManagement_status"
+              label="Observação"
+              placeholder="Digite uma observação"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <StickyNote2OutlinedIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </Grid>
+
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="wasteStorageAndManagement_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -209,6 +376,21 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
             <Typography variant="body1">Esgoto sanitário</Typography>
+          </Grid>
+
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Input
+              inputId="wasteStorageAndManagement_status"
+              label="Observação"
+              placeholder="Digite uma observação"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <StickyNote2OutlinedIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">

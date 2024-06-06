@@ -22,7 +22,7 @@ export default function OilChange() {
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="oilChange_area_location_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -40,7 +40,7 @@ export default function OilChange() {
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="oilChange_company_belong_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -56,7 +56,7 @@ export default function OilChange() {
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="oilChange_paving_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -72,7 +72,7 @@ export default function OilChange() {
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="oilChange_covering_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -88,7 +88,7 @@ export default function OilChange() {
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="oilChange_oily_drainage_system_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -112,7 +112,7 @@ export default function OilChange() {
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="oilChange_oil_change_system_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>

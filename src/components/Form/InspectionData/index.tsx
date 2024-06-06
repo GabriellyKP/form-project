@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Grid, Typography } from "@mui/material";
 
 import CardContainer from "../../common/CardContainer";
@@ -14,10 +14,10 @@ import Autocomplete from "../../common/Autocomplete";
 export default function InspectionData() {
   const [isShow, setIsShow] = useState<boolean>(true);
 
-  const { control } = useFormContext();
+  const { control, setValue } = useFormContext();
   const { fields, append, remove } = useFieldArray({
     control,
-    name: "supply_pumps",
+    name: "inspection_supply_pumps",
   });
 
   const fieldsName = {
@@ -30,7 +30,7 @@ export default function InspectionData() {
 
   const supplyLaneQuantity = useWatch({
     control,
-    name: "inspection_supply_lane",
+    name: "inspection_supply_lane_quantity",
   });
 
   const handleAddSupplyLaneQuantity = async () => {
@@ -50,6 +50,14 @@ export default function InspectionData() {
     "Outorga",
     "Outro",
   ];
+
+  useEffect(() => {
+    setValue("inspection_raining", false);
+    setValue("inspection_center_in_operation", false);
+    setValue("inspection_first_inspection", false);
+    setValue("inspection_changes_in_facade", false);
+    setValue("inspection_change_in_anp", false);
+  }, []);
 
   return (
     <CardContainer
@@ -99,14 +107,14 @@ export default function InspectionData() {
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Input
-              inputId="inspection_collaborator_inspection"
+              inputId="inspection_leak_records"
               label="Registros de vazamentos ou queda de energia no sistema de monitoramento"
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Input
-              inputId="inspection_collaborator_inspection"
+              inputId="inspection_monitorin_system_operation_extract"
               label="Extrato de operação do sistema de monitoramento"
             />
           </Grid>
@@ -121,7 +129,7 @@ export default function InspectionData() {
 
           <Grid item lg={12} sm={12} xs={12} display="flex" gap={pxToRem(16)}>
             <NumericInput
-              inputId="inspection_supply_lane"
+              inputId="inspection_supply_lane_quantity"
               label="Quantidade de pistas de abastecimento (1-30)"
               placeholder="Digite a quantidade de pistas"
               isAllowed={(values) => {
@@ -151,13 +159,9 @@ export default function InspectionData() {
               Sistema de controle de estoque
             </Typography>
           </Grid>
-          {/* 
-          <Grid item lg={12} sm={12} xs={12} display="flex">
-            <Divider sx={{ width: "100%" }} />
-          </Grid> */}
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="file" />
+            <FileUploadInput inputId="inspection_inventory_control_system" />
           </Grid>
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
@@ -169,7 +173,7 @@ export default function InspectionData() {
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="inspection_monitoring_system_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>

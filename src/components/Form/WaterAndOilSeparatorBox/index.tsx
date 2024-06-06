@@ -33,7 +33,7 @@ export default function WaterAndOilSeparatorBox() {
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="wasteStorageAndManagement_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -49,7 +49,7 @@ export default function WaterAndOilSeparatorBox() {
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="wasteStorageAndManagement_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -65,7 +65,7 @@ export default function WaterAndOilSeparatorBox() {
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="wasteStorageAndManagement_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -81,7 +81,7 @@ export default function WaterAndOilSeparatorBox() {
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
               inputId="wasteStorageAndManagement_status"
-              label="Status"
+              label="Situação"
               options={statusOptions}
             />
           </Grid>
@@ -106,7 +106,7 @@ export default function WaterAndOilSeparatorBox() {
               <Grid item lg={6} sm={12} xs={12} display="flex">
                 <Autocomplete
                   inputId="wasteStorageAndManagement_status"
-                  label="Status"
+                  label="Situação"
                   options={statusOptions}
                 />
               </Grid>

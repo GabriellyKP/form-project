@@ -66,28 +66,28 @@ export default function Fields({ index }: FieldsProps) {
         <>
           <Grid item lg={12} sm={12} xs={12} display="flex">
             <Input
-              inputId={`${index}.manufacturer_name`}
+              inputId={`tanks.${index}.manufacturer_name`}
               label="Nome do fabricante"
               placeholder="Digite o nome do fabricante"
             />
           </Grid>
           <Grid item lg={6} sm={6} xs={12} display="flex">
             <NumericInput
-              inputId={`${index}.year_of_manufacture`}
+              inputId={`tanks.${index}.year_of_manufacture`}
               label="Ano de fabricação"
               placeholder="Digite o ano de fabricação"
             />
           </Grid>
           <Grid item lg={6} sm={6} xs={12} display="flex">
             <NumericInput
-              inputId={`${index}.serial_number`}
+              inputId={`tanks.${index}.serial_number`}
               label="Número de série"
               placeholder="Digite o número de série"
             />
           </Grid>
           <Grid item lg={6} sm={6} xs={12} display="flex">
             <Autocomplete
-              inputId={`${index}.type`}
+              inputId={`tanks.${index}.type`}
               label="Tipo de tanque"
               placeholder="Selecione o tipo de tanque"
               options={tankTypeOptions}
@@ -95,14 +95,14 @@ export default function Fields({ index }: FieldsProps) {
           </Grid>
           <Grid item lg={6} sm={6} xs={12} display="flex">
             <NumericInput
-              inputId={`${index}.volume`}
+              inputId={`tanks.${index}.volume`}
               label="Volume (m³)"
               placeholder="Digite o volume"
             />
           </Grid>
           <Grid item lg={6} sm={6} xs={12} display="flex">
             <Autocomplete
-              inputId={`${index}.stored_product`}
+              inputId={`tanks.${index}.stored_product`}
               label="Produto armazenado"
               placeholder="Selecione o produto armazenado"
               options={storageProductOptions}
@@ -110,7 +110,7 @@ export default function Fields({ index }: FieldsProps) {
           </Grid>
           <Grid item lg={6} sm={6} xs={12} display="flex">
             <Autocomplete
-              inputId={`${index}.wall_type`}
+              inputId={`tanks.${index}.wall_type`}
               label="Tipo de parede"
               placeholder="Selecione o tipo de parede"
               options={wallTypeOptions}

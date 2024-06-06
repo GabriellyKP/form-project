@@ -13,12 +13,22 @@ function App() {
   const { handleSubmit, reset } = useFormProvider;
   const [generatePdf, setGeneratePdf] = useState<boolean>(false);
   const [formData, setFormData] = useState<IFormDataFields>();
+  // const downloadLinkRef = useRef<HTMLAnchorElement>(null);
 
   //@ts-expect-error permitir tipagem any para esse campo
   const useGeneratePdf = (data) => {
     setGeneratePdf(true);
     setFormData(data);
   };
+
+  // const handlePdfGenerated = (url: string) => {
+  //   if (downloadLinkRef.current) {
+  //     downloadLinkRef.current.href = url;
+  //     downloadLinkRef.current.download = "Relatório_de_Visita_Técnica.pdf";
+  //     downloadLinkRef.current.click();
+  //     setGeneratePdf(false);
+  //   }
+  // };
 
   return (
     <FormProvider {...useFormProvider}>

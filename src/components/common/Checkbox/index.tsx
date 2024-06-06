@@ -1,26 +1,13 @@
-import {
-  Box,
-  FormControlLabel,
-  Checkbox as MuiCheckbox,
-  Tooltip,
-} from "@mui/material";
-import { InfoOutlined } from "@mui/icons-material";
+import { Box, FormControlLabel, Checkbox as MuiCheckbox } from "@mui/material";
 
 import { Controller, useFormContext } from "react-hook-form";
 
 interface CheckboxProps {
   inputId: string;
   label: string | JSX.Element;
-  textInfo?: string;
-  isHidden?: boolean;
 }
 
-export default function Checkbox({
-  inputId,
-  label,
-  textInfo,
-  isHidden = false,
-}: CheckboxProps) {
+export default function Checkbox({ inputId, label }: CheckboxProps) {
   const { control } = useFormContext();
 
   return (
@@ -36,7 +23,6 @@ export default function Checkbox({
                   id={inputId}
                   checked={value}
                   onChange={onChange}
-                  disabled={isHidden}
                   inputRef={ref}
                 />
               }
@@ -45,12 +31,6 @@ export default function Checkbox({
           </Box>
         )}
       />
-
-      {textInfo && !isHidden && (
-        <Tooltip title={textInfo} placement="top">
-          <InfoOutlined color="info" />
-        </Tooltip>
-      )}
     </Box>
   );
 }
