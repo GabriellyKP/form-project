@@ -5,6 +5,7 @@ import Form from "./components/Form";
 import FormularioPDF from "./components/pdf";
 import { useState } from "react";
 import { IFormDataFields } from "./types/formDataType";
+import { PDFDownloadLink } from "@react-pdf/renderer"; // Import the pdf method from React PDF
 
 function App() {
   const isSmall = useMediaQuery("(max-width:599px)");
@@ -12,23 +13,30 @@ function App() {
   const useFormProvider = useForm();
   const { handleSubmit, reset } = useFormProvider;
   const [generatePdf, setGeneratePdf] = useState<boolean>(false);
-  const [formData, setFormData] = useState<IFormDataFields>();
+  const [formData, setFormData] = useState<IFormDataFields | undefined>(
+    undefined
+  );
   // const downloadLinkRef = useRef<HTMLAnchorElement>(null);
 
-  //@ts-expect-error permitir tipagem any para esse campo
-  const useGeneratePdf = (data) => {
+  // const useGeneratePdf = (data) => {
+  //   setGeneratePdf(true);
+  //   setFormData(data);
+  // };
+
+  const handleGeneratePdf = (data: IFormDataFields) => {
     setGeneratePdf(true);
     setFormData(data);
   };
 
-  // const handlePdfGenerated = (url: string) => {
-  //   if (downloadLinkRef.current) {
-  //     downloadLinkRef.current.href = url;
-  //     downloadLinkRef.current.download = "Relatório_de_Visita_Técnica.pdf";
-  //     downloadLinkRef.current.click();
-  //     setGeneratePdf(false);
-  //   }
-  // };
+  const handleSaveAndDownload = () => {
+    handleSubmit(handleGeneratePdf as any)();
+  };
+
+  const handleDownloadClick = () => {
+    // Reseta o estado após o clique para voltar para "Salvar dados"
+    setGeneratePdf(false);
+    setFormData(undefined);
+  };
 
   return (
     <FormProvider {...useFormProvider}>
@@ -67,15 +75,35 @@ function App() {
           <Button variant="outlined" onClick={() => reset()}>
             Limpar formulário
           </Button>
-          <Button
-            variant="contained"
-            sx={{ px: pxToRem(50) }}
-            onClick={handleSubmit(useGeneratePdf)}
-          >
-            Enviar
-          </Button>
+
+          {generatePdf && formData ? (
+            <PDFDownloadLink
+              style={{ textDecoration: "none" }}
+              document={<FormularioPDF formData={formData} />}
+              fileName={`Relatorio_de_Visita_Tecnica_${formData.establishment_company_name}.pdf`}
+            >
+              {({ loading }) => (
+                <Button
+                  variant="contained"
+                  sx={{ px: pxToRem(50) }}
+                  disabled={loading}
+                  onBlur={handleDownloadClick}
+                >
+                  {loading ? "Gerando PDF..." : "Baixar PDF"}
+                </Button>
+              )}
+            </PDFDownloadLink>
+          ) : (
+            <Button
+              variant="contained"
+              sx={{ px: pxToRem(50) }}
+              onClick={handleSaveAndDownload}
+            >
+              Salvar dados
+            </Button>
+          )}
         </Card>
-        {generatePdf && formData && <FormularioPDF formData={formData} />}
+        {/* {generatePdf && formData && <FormularioPDF formData={formData} />} */}
       </Box>
     </FormProvider>
   );

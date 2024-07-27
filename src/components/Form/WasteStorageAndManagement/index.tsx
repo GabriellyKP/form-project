@@ -32,7 +32,7 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
             <Input
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_area_location_observation"
               label="Observação"
               placeholder="Digite uma observação"
               InputProps={{
@@ -47,14 +47,14 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_area_location_status"
               label="Situação"
               options={statusOptions}
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="inspection_monitoring_system_file" />
+            <FileUploadInput inputId="wasteStorageAndManagement_area_location_file" />
           </Grid>
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
@@ -63,7 +63,7 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
             <Input
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_paving_observation"
               label="Observação"
               placeholder="Digite uma observação"
               InputProps={{
@@ -78,14 +78,14 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_paving_status"
               label="Situação"
               options={statusOptions}
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="inspection_monitoring_system_file" />
+            <FileUploadInput inputId="wasteStorageAndManagement_paving_file" />
           </Grid>
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
@@ -94,7 +94,7 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
             <Input
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_coverage_observation"
               label="Observação"
               placeholder="Digite uma observação"
               InputProps={{
@@ -109,14 +109,14 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_coverage_status"
               label="Situação"
               options={statusOptions}
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="inspection_monitoring_system_file" />
+            <FileUploadInput inputId="wasteStorageAndManagement_coverage_file" />
           </Grid>
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
@@ -127,7 +127,7 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
             <Input
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_drainage_containment_system_observation"
               label="Observação"
               placeholder="Digite uma observação"
               InputProps={{
@@ -142,14 +142,14 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_drainage_containment_system_status"
               label="Situação"
               options={statusOptions}
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="inspection_monitoring_system_file" />
+            <FileUploadInput inputId="wasteStorageAndManagement_drainage_containment_system_file" />
           </Grid>
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
@@ -160,7 +160,7 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
             <Input
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_environmental_conservation_status_observation"
               label="Observação"
               placeholder="Digite uma observação"
               InputProps={{
@@ -175,14 +175,14 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_environmental_conservation_status_status"
               label="Situação"
               options={statusOptions}
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="inspection_monitoring_system_file" />
+            <FileUploadInput inputId="wasteStorageAndManagement_environmental_conservation_status_file" />
           </Grid>
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
@@ -193,7 +193,7 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
             <Input
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_quality_of_waste_segregation_observation"
               label="Observação"
               placeholder="Digite uma observação"
               InputProps={{
@@ -208,14 +208,14 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_quality_of_waste_segregation_status"
               label="Situação"
               options={statusOptions}
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="inspection_monitoring_system_file" />
+            <FileUploadInput inputId="wasteStorageAndManagement_quality_of_waste_segregation_file" />
           </Grid>
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
@@ -226,7 +226,7 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
             <Input
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_store_oily_sludge_observation"
               label="Observação"
               placeholder="Digite uma observação"
               InputProps={{
@@ -241,14 +241,14 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_store_oily_sludge_status"
               label="Situação"
               options={statusOptions}
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="inspection_monitoring_system_file" />
+            <FileUploadInput inputId="wasteStorageAndManagement_store_oily_sludge_file" />
           </Grid>
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
@@ -257,7 +257,7 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
             <Input
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_filter_storage_observation"
               label="Observação"
               placeholder="Digite uma observação"
               InputProps={{
@@ -272,14 +272,14 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_store_oily_sludge_status"
               label="Situação"
               options={statusOptions}
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="inspection_monitoring_system_file" />
+            <FileUploadInput inputId="wasteStorageAndManagement_store_oily_sludge_file" />
           </Grid>
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
@@ -288,7 +288,7 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
             <Input
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_burlap_storage_observation"
               label="Observação"
               placeholder="Digite uma observação"
               InputProps={{
@@ -303,14 +303,14 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_burlap_storage_status"
               label="Situação"
               options={statusOptions}
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="inspection_monitoring_system_file" />
+            <FileUploadInput inputId="wasteStorageAndManagement_burlap_storage_file" />
           </Grid>
           <Grid item lg={12} sm={12} xs={12} display="flex">
             <Typography variant="body1">Armazenamento de embalagens</Typography>
@@ -318,7 +318,7 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
             <Input
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_packaging_storage_observation"
               label="Observação"
               placeholder="Digite uma observação"
               InputProps={{
@@ -333,14 +333,14 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_packaging_storage_status"
               label="Situação"
               options={statusOptions}
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="inspection_monitoring_system_file" />
+            <FileUploadInput inputId="wasteStorageAndManagement_packaging_storage_file" />
           </Grid>
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
@@ -349,7 +349,7 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
             <Input
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_class_II_waste_observation"
               label="Observação"
               placeholder="Digite uma observação"
               InputProps={{
@@ -364,14 +364,14 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_class_II_waste_status"
               label="Situação"
               options={statusOptions}
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="inspection_monitoring_system_file" />
+            <FileUploadInput inputId="wasteStorageAndManagement_class_II_waste_file" />
           </Grid>
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
@@ -380,7 +380,7 @@ export default function WasteStorageAndManagement() {
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
             <Input
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_sanitary_sewage_observation"
               label="Observação"
               placeholder="Digite uma observação"
               InputProps={{
@@ -393,16 +393,24 @@ export default function WasteStorageAndManagement() {
             />
           </Grid>
 
-          <Grid item lg={6} sm={12} xs={12} display="flex">
+          <Grid item lg={12} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="wasteStorageAndManagement_status"
+              inputId="wasteStorageAndManagement_sanitary_sewage_type"
               label="Tipo"
               options={sanitarySewageOptions}
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="inspection_monitoring_system_file" />
+            <Autocomplete
+              inputId="wasteStorageAndManagement_sanitary_sewage_status"
+              label="Situação"
+              options={statusOptions}
+            />
+          </Grid>
+
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <FileUploadInput inputId="wasteStorageAndManagement_sanitary_sewage_file" />
           </Grid>
         </>
       )}

@@ -32,14 +32,14 @@ export default function WaterAndOilSeparatorBox() {
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="wasteStorageAndManagement_status"
+              inputId="waterAndOilSeparatorBox_area_location_status"
               label="Situação"
               options={statusOptions}
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="inspection_monitoring_system_file" />
+            <FileUploadInput inputId="waterAndOilSeparatorBox_area_location_file" />
           </Grid>
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
@@ -48,14 +48,14 @@ export default function WaterAndOilSeparatorBox() {
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="wasteStorageAndManagement_status"
+              inputId="waterAndOilSeparatorBox_cleaning_status"
               label="Situação"
               options={statusOptions}
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="inspection_monitoring_system_file" />
+            <FileUploadInput inputId="waterAndOilSeparatorBox_cleaning_file" />
           </Grid>
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
@@ -64,14 +64,14 @@ export default function WaterAndOilSeparatorBox() {
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="wasteStorageAndManagement_status"
+              inputId="waterAndOilSeparatorBox_structure_status"
               label="Situação"
               options={statusOptions}
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="inspection_monitoring_system_file" />
+            <FileUploadInput inputId="waterAndOilSeparatorBox_structure_file" />
           </Grid>
 
           <Grid item lg={12} sm={12} xs={12} display="flex">
@@ -80,14 +80,14 @@ export default function WaterAndOilSeparatorBox() {
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="wasteStorageAndManagement_status"
+              inputId="waterAndOilSeparatorBox_apparent_stagnation_status"
               label="Situação"
               options={statusOptions}
             />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <FileUploadInput inputId="inspection_monitoring_system_file" />
+            <FileUploadInput inputId="waterAndOilSeparatorBox_apparent_stagnation_file" />
           </Grid>
 
           <Grid item lg={6} sm={12} xs={12} display="flex">
@@ -105,14 +105,14 @@ export default function WaterAndOilSeparatorBox() {
 
               <Grid item lg={6} sm={12} xs={12} display="flex">
                 <Autocomplete
-                  inputId="wasteStorageAndManagement_status"
+                  inputId="waterAndOilSeparatorBox_solids_retention_status"
                   label="Situação"
                   options={statusOptions}
                 />
               </Grid>
 
               <Grid item lg={6} sm={12} xs={12} display="flex">
-                <FileUploadInput inputId="inspection_monitoring_system_file" />
+                <FileUploadInput inputId="waterAndOilSeparatorBox_solids_retention_file" />
               </Grid>
             </>
           )}

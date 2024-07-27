@@ -1,123 +1,168 @@
 import { useState } from "react";
-import { Grid } from "@mui/material";
+import { Divider, Grid, Typography } from "@mui/material";
 
 import CardContainer from "../../common/CardContainer";
-import Input from "../../common/Input";
 import Autocomplete from "../../common/Autocomplete";
-import NumericInput from "../../common/NumericInput";
+import FileUploadInput from "../../common/FileUploadInput";
+import Checkbox from "../../common/Checkbox";
+import { useFormContext } from "react-hook-form";
 
 export default function Washing() {
-  const [isShow, setIsShow] = useState<boolean>(true);
+  const { watch } = useFormContext();
 
-  const zoningOptions = ["Urbano", "Industrial", "Diversificado", "Rural"];
+  const [isShow, setIsShow] = useState<boolean>(true);
+  const hasOwnSaoBox = watch("washing_has_own_SAO_box");
+
+  const statusOptions = ["Ruim", "Regular", "Bom", "Ótimo"];
+
+  const vehicleOptions = [
+    "Veículos pesados e leves",
+    "Veículos pesados",
+    "Veículos leves",
+  ];
+
+  const washingSystemOptions = ["Rampa", "Vala"];
+
+  const reuseOfWashingEffluentOptions = ["Total", "Parcial", "Não reutiliza"];
 
   return (
     <CardContainer title="Lavação" isShow={isShow} setIsShow={setIsShow}>
       {isShow && (
         <>
-          <Grid item lg={6} sm={12} xs={12} display="flex">
-            <Input
-              inputId="establishment_company_name"
-              label="Razão social"
-              placeholder="Digite a razão social"
-            />
-          </Grid>
-          <Grid item lg={6} sm={12} xs={12} display="flex">
-            <Input
-              inputId="establishment_trading_name"
-              label="Nome fantasia"
-              placeholder="Digite o nome fantasia"
-            />
-          </Grid>
-          <Grid item lg={6} sm={12} xs={12} display="flex">
-            <Input
-              inputId="establishment_cnpj"
-              label="CNPJ"
-              placeholder="Digite o CNPJ"
-            />
-          </Grid>
-          <Grid item lg={6} sm={12} xs={12} display="flex">
-            <Input
-              inputId="establishment_cep"
-              label="CEP"
-              placeholder="Digite o CEP"
-            />
-          </Grid>
-          <Grid item lg={6} sm={12} xs={12} display="flex">
-            <Input
-              inputId="establishment_state"
-              label="Estado"
-              placeholder="Digite o estado"
-            />
-          </Grid>
-          <Grid item lg={6} sm={12} xs={12} display="flex">
-            <Input
-              inputId="establishment_city"
-              label="Cidade"
-              placeholder="Digite a cidade"
-            />
-          </Grid>
           <Grid item lg={12} sm={12} xs={12} display="flex">
-            <Input
-              inputId="establishment_address"
-              label="Endereço"
-              placeholder="Digite o endereço"
+            <Typography variant="body1">Localização da área</Typography>
+          </Grid>
+
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <Autocomplete
+              inputId="washing_area_location_status"
+              label="Situação"
+              options={statusOptions}
             />
           </Grid>
+
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <FileUploadInput inputId="washing_area_location_file" />
+          </Grid>
+
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Typography variant="body1">
+              Pertencente ao empreendimento
+            </Typography>
+          </Grid>
+
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <Autocomplete
+              inputId="washing_belonging_enterprise_status"
+              label="Situação"
+              options={statusOptions}
+            />
+          </Grid>
+
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <FileUploadInput inputId="washing_belonging_enterprise_file" />
+          </Grid>
+
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Typography variant="body1">Pavimentação</Typography>
+          </Grid>
+
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <Autocomplete
+              inputId="washing_paving_status"
+              label="Situação"
+              options={statusOptions}
+            />
+          </Grid>
+
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <FileUploadInput inputId="washing_paving_file" />
+          </Grid>
+
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Typography variant="body1">Cobertura</Typography>
+          </Grid>
+
           <Grid item lg={12} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId="establishment_zoning"
-              label="Zoneamento"
-              options={zoningOptions}
+              inputId="washing_coverage_status"
+              label="Situação"
+              options={statusOptions}
             />
           </Grid>
+
           <Grid item lg={6} sm={12} xs={12} display="flex">
-            <Input
-              inputId="establishment_branch_of_activity"
-              label="Ramo de atividade"
-              placeholder="Digite o ramo de atividade"
-            />
+            <FileUploadInput inputId="washing_coverage_file" />
           </Grid>
-          <Grid item lg={6} sm={12} xs={12} display="flex">
-            <Input
-              inputId="establishment_flag"
-              label="Bandeira"
-              placeholder="Digite a bandeira"
-            />
-          </Grid>
-          <Grid item lg={6} sm={12} xs={12} display="flex">
-            <Input
-              inputId="establishment_phone"
-              label="Telefone"
-              placeholder="Digite o telefone"
-            />
-          </Grid>
-          <Grid item lg={6} sm={12} xs={12} display="flex">
-            <Input
-              inputId="establishment_email"
-              label="E-mail"
-              placeholder="Digite o e-mail"
-            />
-          </Grid>
-          <Grid item lg={6} sm={12} xs={12} display="flex">
-            <Input
-              inputId="establishment_responsible_name"
-              label="Nome do responsável"
-              placeholder="Digite o nome do responsável"
-            />
-          </Grid>
-          <Grid item lg={6} sm={12} xs={12} display="flex">
-            <NumericInput
-              inputId="establishment_employees_quantity"
-              label="Quantidade de funcionários"
-              placeholder="Digite a quantidade de funcionários"
-            />
-          </Grid>
+
           <Grid item lg={12} sm={12} xs={12} display="flex">
-            <Input
-              inputId="establishment_coordinates"
-              label="Coordenadas (UTC)"
-              placeholder="Digite as coordenadas"
+            <Typography variant="body1">Sistema de drenagem oleosa</Typography>
+          </Grid>
+
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <Autocomplete
+              inputId="washing_oily_drainage_system_status"
+              label="Situação"
+              options={statusOptions}
+            />
+          </Grid>
+
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <FileUploadInput inputId="washing_oily_drainage_system_file" />
+          </Grid>
+
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Checkbox
+              inputId="washing_has_own_SAO_box"
+              label="Caixa SAO própria?"
+            />
+          </Grid>
+
+          {hasOwnSaoBox && (
+            <>
+              <Grid item lg={12} sm={12} xs={12} display="flex">
+                <Typography variant="body1">Caixa SAO própria</Typography>
+              </Grid>
+
+              <Grid item lg={6} sm={12} xs={12} display="flex">
+                <Autocomplete
+                  inputId="washing_own_SAO_box_status"
+                  label="Situação"
+                  options={statusOptions}
+                />
+              </Grid>
+
+              <Grid item lg={6} sm={12} xs={12} display="flex">
+                <FileUploadInput inputId="washing_own_SAO_box_file" />
+              </Grid>
+            </>
+          )}
+
+          <Grid item lg={12} sm={12} xs={12}>
+            <Divider />
+          </Grid>
+
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Autocomplete
+              inputId="washing_washing_system"
+              label="Sistema de lavação"
+              options={washingSystemOptions}
+            />
+          </Grid>
+
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Autocomplete
+              inputId="washing_vehicle"
+              label="Veículos predominante"
+              options={vehicleOptions}
+            />
+          </Grid>
+
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Autocomplete
+              inputId="washing_reuse_of_washing_effluent"
+              label="Reutilização do efluente da lavação"
+              options={reuseOfWashingEffluentOptions}
             />
           </Grid>
         </>

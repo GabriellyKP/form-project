@@ -1,40 +1,46 @@
 import { useState } from "react";
-import { Button, Grid } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 
 import CardContainer from "../../common/CardContainer";
 import NumericInput from "../../common/NumericInput";
 import { useFieldArray, useFormContext, useWatch } from "react-hook-form";
 import Fields from "./Fields";
 import { pxToRem } from "../../../styles/muiTheme";
+import Autocomplete from "../../common/Autocomplete";
+import FileUploadInput from "../../common/FileUploadInput";
+import Checkbox from "../../common/Checkbox";
 
 export default function Tankage() {
   const [isShow, setIsShow] = useState<boolean>(true);
 
+  const statusOptions = ["Ruim", "Regular", "Bom", "Ótimo"];
+
   const { control } = useFormContext();
   const { fields, append, remove } = useFieldArray({
     control,
-    name: "tanks",
+    name: "tankages",
   });
 
   const fieldsName = {
-    year_of_manufacture: "",
-    serial_number: "",
-    type: "",
-    volume: "",
-    stored_product: "",
-    manufacturer_name: "",
-    wall_type: "",
+    has_tank_plate: false,
+    tank_plate_file: "",
+    unloading_area_file: "",
+    spill_file: "",
+    tank_sump_file: "",
   };
 
   const addTankInputs = () => {
     append(fieldsName);
   };
 
-  const tanksQuantity = useWatch({ control, name: "tank_quantity" });
+  const tankageAreasQuantity = useWatch({
+    control,
+    name: "tankage_amount_area_quantity",
+  });
 
-  const handleAddTanksQuantity = async () => {
+  const handleAddTankageAreasQuantity = async () => {
     remove();
-    for (let i = 0; i < tanksQuantity; i++) {
+    for (let i = 0; i < tankageAreasQuantity; i++) {
       addTankInputs();
     }
   };
@@ -45,9 +51,9 @@ export default function Tankage() {
         <>
           <Grid item lg={12} sm={12} xs={12} display="flex" gap={pxToRem(16)}>
             <NumericInput
-              inputId="tanks_quantity"
-              label="Quantidade de tanques (1-30)"
-              placeholder="Digite a quantidade de tanques"
+              inputId="tankage_amount_area_quantity"
+              label="Quantidade de área de tancagem (1-30)"
+              placeholder="Digite a quantidade de área de tancagem"
               isAllowed={(values) => {
                 const { formattedValue, floatValue } = values;
                 if (floatValue == null) {
@@ -59,11 +65,70 @@ export default function Tankage() {
             />
             <Button
               variant="contained"
-              onClick={handleAddTanksQuantity}
-              disabled={!tanksQuantity}
+              onClick={handleAddTankageAreasQuantity}
+              disabled={!tankageAreasQuantity}
             >
               Adicionar
             </Button>
+          </Grid>
+
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Typography variant="body1">Pavimentação dos tanques</Typography>
+          </Grid>
+
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <Autocomplete
+              inputId="tankage_tank_paving_status"
+              label="Situação"
+              options={statusOptions}
+            />
+          </Grid>
+
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <FileUploadInput inputId="tankage_tank_paving_file" />
+          </Grid>
+
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Typography variant="body1">
+              Sistema de respiros dos tanques
+            </Typography>
+          </Grid>
+
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <Autocomplete
+              inputId="tankage_tank_breather_system_status"
+              label="Situação"
+              options={statusOptions}
+            />
+          </Grid>
+
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <FileUploadInput inputId="tankage_tank_breather_system_file" />
+          </Grid>
+
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Checkbox
+              inputId="tankage_has_pressure_and_vacuum_valve"
+              label="Possui válvula de pressão e vácuo"
+            />
+          </Grid>
+
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Typography variant="body1">
+              Canaleta de drenagem oleosa tanques
+            </Typography>
+          </Grid>
+
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <Autocomplete
+              inputId="tankage_oily_tank_drainage_channel_status"
+              label="Situação"
+              options={statusOptions}
+            />
+          </Grid>
+
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <FileUploadInput inputId="tankage_oily_tank_drainage_channel_file" />
           </Grid>
 
           {fields.map((item, index) => (

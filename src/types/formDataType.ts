@@ -31,7 +31,7 @@ export interface IFormDataFields {
   inspection_water_supply: string;
   inspection_monitoring_system_file: File;
   inspection_inventory_control_system: File;
-  inspection_supply_pumps: Array<File>;
+  inspection_supply_pumps: Array<{ inspection_supply_lane_file: File }>;
   inspection_supply_lane_quantity: number;
 }
 

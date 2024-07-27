@@ -1,31 +1,22 @@
 import { Fragment, useState } from "react";
 import { Box, Button, Divider, Grid, Typography } from "@mui/material";
-import Input from "../../common/Input";
-import NumericInput from "../../common/NumericInput";
-import Autocomplete from "../../common/Autocomplete";
 import { Add, Remove } from "@mui/icons-material";
+import FileUploadInput from "../../common/FileUploadInput";
+import Checkbox from "../../common/Checkbox";
+import { useFormContext } from "react-hook-form";
+import Autocomplete from "../../common/Autocomplete";
 
 interface FieldsProps {
   index: number;
 }
 
 export default function Fields({ index }: FieldsProps) {
+  const { watch } = useFormContext();
   const [isShow, setIsShow] = useState<boolean>(true);
 
-  const tankTypeOptions = ["Pleno", "Bipartido", "Tripartido", "Outro"];
-  const storageProductOptions = [
-    "Diesel s10",
-    "Diesel s500",
-    "Gasolina comum",
-    "Gasolina aditivada",
-    "Etanol",
-  ];
-  const wallTypeOptions = [
-    "Parede simples",
-    "Parede dupla",
-    "Jaquetado",
-    "Outro",
-  ];
+  const hasTankPlate = watch(`tankages.${index}.has_tank_plate`);
+
+  const statusOptions = ["Ruim", "Regular", "Bom", "Ótimo"];
 
   return (
     <Fragment>
@@ -39,7 +30,7 @@ export default function Fields({ index }: FieldsProps) {
         position="relative"
       >
         <Box display="flex" alignItems="center">
-          <Typography variant="body1">{`Tanque ${index + 1}`}</Typography>
+          <Typography variant="body1">{`Área Tanque ${index + 1}`}</Typography>
         </Box>
         {typeof setIsShow === "function" && (
           <Button
@@ -63,57 +54,64 @@ export default function Fields({ index }: FieldsProps) {
       </Grid>
 
       {isShow && (
-        <>
+        <Fragment>
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <Checkbox
+              inputId={`tankages.${index}.has_tank_plate`}
+              label="Possui plaqueta do tanque"
+            />
+          </Grid>
+          {hasTankPlate && (
+            <Grid item lg={6} sm={12} xs={12} display="flex">
+              <FileUploadInput inputId={`tankages.${index}.tank_plate_file`} />
+            </Grid>
+          )}
           <Grid item lg={12} sm={12} xs={12} display="flex">
-            <Input
-              inputId={`${index}.manufacturer_name`}
-              label="Nome do fabricante"
-              placeholder="Digite o nome do fabricante"
-            />
+            <Typography variant="body1">Área de descarga:</Typography>
           </Grid>
-          <Grid item lg={6} sm={6} xs={12} display="flex">
-            <NumericInput
-              inputId={`${index}.year_of_manufacture`}
-              label="Ano de fabricação"
-              placeholder="Digite o ano de fabricação"
-            />
-          </Grid>
-          <Grid item lg={6} sm={6} xs={12} display="flex">
-            <NumericInput
-              inputId={`${index}.serial_number`}
-              label="Número de série"
-              placeholder="Digite o número de série"
-            />
-          </Grid>
-          <Grid item lg={6} sm={6} xs={12} display="flex">
+          <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId={`${index}.type`}
-              label="Tipo de tanque"
-              options={tankTypeOptions}
+              inputId={`tankages.${index}.unloading_area_status`}
+              label="Situação"
+              options={statusOptions}
             />
           </Grid>
-          <Grid item lg={6} sm={6} xs={12} display="flex">
-            <NumericInput
-              inputId={`${index}.volume`}
-              label="Volume (m³)"
-              placeholder="Digite o volume"
+          <Grid item lg={6} sm={12} xs={12} display="flex">
+            <FileUploadInput
+              inputId={`tankages.${index}.unloading_area_file`}
             />
           </Grid>
-          <Grid item lg={6} sm={6} xs={12} display="flex">
+
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Typography variant="body1">
+              Spill de monitoramento do tanque:
+            </Typography>
+          </Grid>
+          <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId={`${index}.stored_product`}
-              label="Produto armazenado"
-              options={storageProductOptions}
+              inputId={`tankages.${index}.spill_status`}
+              label="Situação"
+              options={statusOptions}
             />
           </Grid>
-          <Grid item lg={6} sm={6} xs={12} display="flex">
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <FileUploadInput inputId={`tankages.${index}.spill_file`} />
+          </Grid>
+
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <Typography variant="body1">Sump do tanque:</Typography>
+          </Grid>
+          <Grid item lg={6} sm={12} xs={12} display="flex">
             <Autocomplete
-              inputId={`${index}.wall_type`}
-              label="Tipo de parede"
-              options={wallTypeOptions}
+              inputId={`tankages.${index}.tank_sump_status`}
+              label="Situação"
+              options={statusOptions}
             />
           </Grid>
-        </>
+          <Grid item lg={12} sm={12} xs={12} display="flex">
+            <FileUploadInput inputId={`tankages.${index}.tank_sump_file`} />
+          </Grid>
+        </Fragment>
       )}
     </Fragment>
   );
